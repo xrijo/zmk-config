@@ -1,8 +1,20 @@
-/*
+layer_8 {
+            display-name = "LAYER_8";
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            //                    |     |     |     |     |     |     |
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans/*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -61,11 +73,18 @@
 
         colemak {
             display-name = "colemak";
+
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  F  |  P  |  G  |  J  |  L  |  U  |  Y  |  ;  | BSPC |
+            // | CTRL |  A  |  R  |  S  |  T  |  D  |  H  |  N  |  E  |  I  |  O  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |  K  |  M  |  ,  |  .  |  /  | SHFT |
+            //                    | LYR1| LYR2| SPC | ENT | LYR9| ESC |
+
             bindings = <
-&kp TAB    &kp Q            &kp W            &kp F                &kp P              &kp G        &kp J      &kp L               &kp U         &kp Y             &kp SEMI          &kp BACKSPACE
-&kp LCTRL  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp D        &kp H      &hmr RIGHT_SHIFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
-&kp LSHFT  &kp Z            &kp X            &kp C                &kp V              &kp B        &kp K      &kp M               &kp COMMA     &kp DOT           &kp FSLH          &kp RIGHT_SHIFT
-                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &mo 9               &kp ESC
+&kp TAB    &kp Q            &kp W            &kp F                &kp P              &kp G        &kp J      &kp L               &kp U                &kp Y             &kp SEMI          &kp BACKSPACE
+&kp LCTRL  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp D        &kp H      &hmr RIGHT_SHIFT N  &hmr LEFT_CONTROL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
+&kp LSHFT  &kp Z            &kp X            &kp C                &kp V              &kp B        &kp K      &kp M               &kp COMMA            &kp DOT           &kp FSLH          &kp RIGHT_SHIFT
+                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &mo 9               &mo 7
             >;
         };
 
@@ -74,62 +93,83 @@
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |  _  |  +  |  {  |  }  | "|" |  ~   |
+            // | CTRL |     |     |     |     | LYR1| -   |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     | LYR5| _   |  +  |  {  |  }  |  |  |  ~   |
             //                    | GUI |     | SPC | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &to 1        &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &to 5        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL          &kp AT            &kp HASH              &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS                &kp LEFT_BRACKET                    &kp RIGHT_BRACKET                 &kp RPAR             &kp BSPC
+&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &to 1        &kp MINUS  &hmr RIGHT_SHIFT EQUAL  &hmr LEFT_CONTROL LEFT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_PARENTHESIS  &hmr RIGHT_GUI BSLH  &kp GRAVE
+&kp LSHFT  &trans            &trans            &trans                &trans              &to 5        &kp UNDER  &kp PLUS                &kp LBRC                            &kp RBRC                          &kp PIPE             &kp TILDE
+                                               &kp LGUI              &trans              &kp SPACE    &kp RET    &trans                  &kp RALT
             >;
         };
 
         fnnum {
             display-name = "fun";
+
+            // -----------------------------------------------------------------------------------------
+            // | BT2 |     | F7  | F8  | F9  | F12 |     | 7   | 8   | 9   |     |      |
+            // | BT2 |     | F4  | F5  | F6  | F11 |     | 4   | 5   | 6   | 0   |      |
+            // | BT3 | LYR6| F1  | F2  | F3  | F10 |     | 1   | 2   | 3   |     |      |
+            //                   |     |     |     |     | 0   |     |
+
             bindings = <
-&bt BT_SEL 2  &trans  &kp F7  &kp F8  &kp F9  &kp F12    &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
-&bt BT_SEL 2  &trans  &kp F4  &kp F5  &kp F6  &kp F11    &trans  &kp N4  &kp N5  &kp N6  &kp N0  &trans
-&bt BT_SEL 3  &to 6   &kp F1  &kp F2  &kp F3  &kp F10    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-                              &trans  &trans  &trans     &trans  &kp N0  &trans
+&bt BT_SEL 2  &trans            &kp F7            &kp F8                &kp F9              &kp F12    &trans  &kp N7               &kp N8                &kp N9             &trans             &trans
+&bt BT_SEL 2  &hml LEFT_GUI N0  &hml LEFT_ALT F4  &hml LEFT_CONTROL F5  &hml LEFT_SHIFT F6  &kp F11    &trans  &hmr RIGHT_SHIFT N4  &hmr LEFT_CONTROL N5  &hmr RIGHT_ALT N6  &hmr RIGHT_GUI N0  &trans
+&bt BT_SEL 3  &to 6             &kp F1            &kp F2                &kp F3              &kp F10    &trans  &kp N1               &kp N2                &kp N3             &trans             &trans
+                                                  &trans                &trans              &trans     &trans  &kp N0               &trans
             >;
         };
 
         Nav {
             display-name = "nav";
+
+            // -----------------------------------------------------------------------------------------
+            // |      | Z   | C   | UP  | V   | Y   |     |     |     |     |     |      |
+            // |      | TAB | LFT | DWN | RGT |     |     |     |     |     |     |      |
+            // |      |     | X   |     |     |     |     |     |     |     |     |      |
+            //                    | BSPC| DEL | ENT |     |     |     |
+
             bindings = <
-&trans  &kp Z    &kp C     &kp UP    &kp V       &kp Y        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp TAB  &kp LEFT  &kp DOWN  &kp RIGHT   &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &kp X     &trans    &trans      &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp BSPC  &kp DELETE  &kp ENTER    &trans  &trans  &trans
+&trans  &kp Z              &kp C               &kp UP                  &kp V                  &kp Y        &trans  &trans               &trans                &trans             &trans             &trans
+&trans  &hml LEFT_GUI TAB  &hml LEFT_ALT LEFT  &hml LEFT_CONTROL DOWN  &hml LEFT_SHIFT RIGHT  &trans       &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&trans  &trans             &kp X               &trans                  &trans                 &trans       &trans  &trans               &trans                &trans             &trans             &trans
+                                               &kp BSPC                &kp DELETE             &kp ENTER    &trans  &trans               &trans
             >;
         };
 
         gaming {
             display-name = "LEAGUE";
+
+            // -----------------------------------------------------------------------------------------
+            // | ESC | TAB | 1   | 2   | 3   | 4   |     |     |     |     |     |      |
+            // | U   | SHFT| Q   | W   | E   | R   |     |     |     |     |     |      |
+            // | P   | T   | A   | S   | D   | F   |     |     |     |     |     |      |
+            //                   | ALT | SPC | CTRL| LYR0|     |     |
+
             bindings = <
-&kp ESC  &kp TAB    &kp N1  &kp N2    &kp N3     &kp N4       &trans  &trans  &trans  &trans  &trans  &trans
-&kp U    &kp LSHFT  &kp Q   &kp W     &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&kp P    &kp T      &kp A   &kp S     &kp D      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-                            &kp LALT  &kp SPACE  &kp LCTRL    &to 0   &trans  &trans
+&kp ESC  &kp TAB              &kp N1           &kp N2               &kp N3             &kp N4       &trans  &trans               &trans                &trans             &trans             &trans
+&kp U    &hml LEFT_GUI LSHFT  &hml LEFT_ALT Q  &hml LEFT_CONTROL W  &hml LEFT_SHIFT E  &kp R        &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&kp P    &kp T                &kp A            &kp S                &kp D              &kp F        &trans  &trans               &trans                &trans             &trans             &trans
+                                               &kp LALT             &kp SPACE          &kp LCTRL    &to 0   &trans               &trans
             >;
         };
 
         qwerty {
             display-name = "QWERTY";
 
-            // --------------------------------------------------------------------------------
+            // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC | ENT | RSE  | ALT |
+            //                    | LYR1| LYR6| SPC | ENT | LYR9 | RALT|
 
             bindings = <
-&kp TAB    &kp Q            &kp W  &kp E  &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &hml LEFT_GUI A  &kp S  &kp D  &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z            &kp X  &kp C  &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                   &to 1  &mo 6  &kp SPACE    &kp RET  &mo 9  &kp RALT
+&kp TAB    &kp Q            &kp W            &kp E                &kp R              &kp T        &kp Y    &kp U               &kp I                &kp O             &kp P                &kp BSPC
+&kp LCTRL  &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G        &kp H    &hmr RIGHT_SHIFT J  &hmr LEFT_CONTROL K  &hmr RIGHT_ALT L  &hmr RIGHT_GUI SEMI  &kp SQT
+&kp LSHFT  &kp Z            &kp X            &kp C                &kp V              &kp B        &kp N    &kp M               &kp COMMA            &kp DOT           &kp FSLH             &kp ESC
+                                             &to 1                &mo 6              &kp SPACE    &kp RET  &mo 9               &kp RALT
             >;
         };
 
@@ -138,9 +178,9 @@
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5    |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT | BTCR| RGB | RST | BOOT| Unlock|     |     |     |     |     |      |
-            //                    | GUI |     | SPC   | ENT |     | ALT |
+            // | CTRL | BT1 | BT2 | BT3 | BT4 | BT5   | LFT | DWN |  UP | RGT |     | LYR4 |
+            // | SHFT | BTCR| RGB | RST | BOOT| Unlock|     |     |     |     | LYR0| LYR5 |
+            //                    | GUI |     | SPC   | GUI |     | SPC |
 
             bindings = <
 &kp TAB    &kp N1        &kp N2           &kp N3        &kp N4        &kp N5            &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
@@ -150,31 +190,54 @@
             >;
         };
 
-        layer_7 {
+        num_layer {
+            display-name = "NUMPAD";
+
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |     |  7  |  8  |  9  |  +  |     |     |     |     |     |      |
+            // | CTRL |     |  4  |  5  |  6  |  -  |     |     |     |     |     |      |
+            // | SHFT |     |  1  |  2  |  3  |  =  |     |     |     |     |     |      |
+            //                    |  0  |  .  | SPC |     |     |     |
+
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp TAB    &trans            &kp N7            &kp N8                &kp N9              &kp PLUS     &trans  &trans               &trans                &trans             &trans             &trans
+&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N4  &hml LEFT_CONTROL N5  &hml LEFT_SHIFT N6  &kp MINUS    &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&kp LSHFT  &trans            &kp N1            &kp N2                &kp N3              &kp EQUAL    &trans  &trans               &trans                &trans             &trans             &trans
+                                               &kp N0                &kp DOT             &kp SPACE    &trans  &trans               &trans
             >;
         };
 
         layer_8 {
+            display-name = "LAYER_8";
+
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            //                    |     |     |     |     |     |     |
+
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans            &trans            &trans                &trans              &trans    &trans  &trans               &trans                &trans             &trans             &trans
+&trans  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &trans    &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&trans  &trans            &trans            &trans                &trans              &trans    &trans  &trans               &trans                &trans             &trans             &trans
+                                            &trans                &trans              &trans    &trans  &trans               &trans
             >;
         };
 
         layer_9 {
             display-name = "navigation";
+
+            // -----------------------------------------------------------------------------------------
+            // |      | Z   | C   | UP  | V   | Y   |     |     |     |     |     |      |
+            // |      | TAB | LFT | DWN | RGT |     |     |     |     |     |     |      |
+            // |      |     | X   |     |     |     |     |     |     |     |     |      |
+            //                    | BSPC| DEL | ENT |     |     |     |
+
             bindings = <
-&trans  &kp Z    &kp C     &kp UP    &kp V       &kp Y        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp TAB  &kp LEFT  &kp DOWN  &kp RIGHT   &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &kp X     &trans    &trans      &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp BSPC  &kp DELETE  &kp ENTER    &trans  &trans  &trans
+&trans  &kp Z              &kp C               &kp UP                  &kp V                  &kp Y        &trans  &trans               &trans                &trans             &trans             &trans
+&trans  &hml LEFT_GUI TAB  &hml LEFT_ALT LEFT  &hml LEFT_CONTROL DOWN  &hml LEFT_SHIFT RIGHT  &trans       &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&trans  &trans             &kp X               &trans                  &trans                 &trans       &trans  &trans               &trans                &trans             &trans             &trans
+                                               &kp BSPC                &kp DELETE             &kp ENTER    &trans  &trans               &trans
             >;
         };
     };
