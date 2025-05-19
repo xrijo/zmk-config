@@ -1,13 +1,4 @@
-layer_8 {
-            display-name = "LAYER_8";
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
-            //                    |     |     |     |     |     |     |
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans/*
+/*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
