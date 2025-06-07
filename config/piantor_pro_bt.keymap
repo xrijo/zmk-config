@@ -274,9 +274,9 @@
         motion {
             display-name = "nav";
             bindings = <
-&kp TAB    &kp N1        &kp N2        &kp N3            &kp N4          &kp N5       &kp N6  &kp N7    &kp PAGE_UP  &kp PAGE_DOWN  &kp N0     &kp BACKSPACE
-&kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp N0  &kp LEFT  &kp DOWN     &kp UP         &kp RIGHT  &kp DOLLAR
-&kp LSHFT  &kp Z         &kp X         &kp C             &kp V           &kp B        &kp K   &kp M     &kp COMMA    &kp DOT        &kp FSLH   &kp RIGHT_SHIFT
+&kp TAB    &kp N1        &kp N2        &kp N3            &kp N4          &kp N5       &kp N6  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp BACKSPACE
+&kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp N0  &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp DOLLAR
+&kp LSHFT  &kp Z         &kp X         &kp C             &kp V           &kp B        &kp K   &kp M     &kp COMMA      &kp DOT      &kp FSLH   &kp RIGHT_SHIFT
                                        &kp BSPC          &kp DEL         &kp SPACE    &trans  &to 0     &trans
             >;
         };
