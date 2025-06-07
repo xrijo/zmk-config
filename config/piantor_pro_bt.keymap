@@ -114,7 +114,7 @@
 &kp TAB    &kp Q            &kp W            &kp F                &kp P              &kp G        &kp J      &kp L               &kp U                &kp Y             &kp SEMI          &kp BACKSPACE
 &kp LCTRL  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp D        &kp H      &hmr RIGHT_SHIFT N  &hmr LEFT_CONTROL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
 &kp LSHFT  &kp Z            &kp X            &kp C                &kp V              &kp B        &kp K      &kp M               &kp COMMA            &kp DOT           &kp FSLH          &kp RIGHT_SHIFT
-                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &mo 9               &mo 7
+                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &mo 10              &mo 7
             >;
         };
 
@@ -162,10 +162,10 @@
             //                    | BSPC| DEL | ENT |     |     |     |
 
             bindings = <
-&trans  &kp Z              &kp C               &kp UP                  &kp V                  &kp Y        &trans  &trans               &trans                &trans             &trans             &trans
-&trans  &hml LEFT_GUI TAB  &hml LEFT_ALT LEFT  &hml LEFT_CONTROL DOWN  &hml LEFT_SHIFT RIGHT  &trans       &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
-&trans  &trans             &kp X               &trans                  &trans                 &trans       &trans  &trans               &trans                &trans             &trans             &trans
-                                               &kp BSPC                &kp DELETE             &kp ENTER    &trans  &trans               &trans
+&trans  &kp Z              &kp C           &kp UP    &kp V       &kp Y        &trans  &trans               &trans                &trans             &trans             &trans
+&trans  &hml LEFT_GUI TAB  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT   &trans       &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
+&trans  &trans             &kp X           &trans    &trans      &trans       &trans  &trans               &trans                &trans             &trans             &trans
+                                           &kp BSPC  &kp DELETE  &kp ENTER    &trans  &trans               &trans
             >;
         };
 
@@ -268,6 +268,16 @@
 &trans  &hml LEFT_GUI TAB  &hml LEFT_ALT LEFT  &hml LEFT_CONTROL DOWN  &hml LEFT_SHIFT RIGHT  &trans       &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
 &trans  &trans             &kp X               &trans                  &trans                 &trans       &trans  &trans               &trans                &trans             &trans             &trans
                                                &kp BSPC                &kp DELETE             &kp ENTER    &trans  &trans               &trans
+            >;
+        };
+
+        motion {
+            display-name = "nav";
+            bindings = <
+&kp TAB    &kp N1        &kp N2        &kp N3            &kp N4          &kp N5       &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp BACKSPACE
+&kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &trans  &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &kp SQT
+&kp LSHFT  &kp Z         &kp X         &kp C             &kp V           &kp B        &kp K   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RIGHT_SHIFT
+                                       &kp BSPC          &kp DEL         &kp SPACE    &trans  &trans    &trans
             >;
         };
     };
