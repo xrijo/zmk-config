@@ -69,6 +69,16 @@
             bindings = <&kp EXCL>;
             key-positions = <1 13>;
         };
+
+        combo_2_index {
+            bindings = <&kp ESCAPE>;
+            key-positions = <16 19>;
+        };
+
+        combo_2_ring {
+            bindings = <&kp TAB>;
+            key-positions = <14 21>;
+        };
     };
 };
 
