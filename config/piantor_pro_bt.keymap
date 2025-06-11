@@ -157,9 +157,9 @@
             //                    | GUI |     | SPC | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL          &kp AT            &kp HASH              &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS                &kp LEFT_BRACKET                    &kp RIGHT_BRACKET                 &kp RPAR             &kp BSPC
-&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &to 1        &kp MINUS  &hmr RIGHT_SHIFT EQUAL  &hmr LEFT_CONTROL LEFT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_PARENTHESIS  &hmr RIGHT_GUI BSLH  &kp GRAVE
-&kp LSHFT  &trans            &trans            &trans                &trans              &to 5        &kp UNDER  &kp PLUS                &kp LBRC                            &kp RBRC                          &kp PIPE             &kp TILDE
+&kp TAB    &kp EXCL          &kp AT            &kp HASH              &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS                &kp LEFT_BRACKET                    &kp RIGHT_BRACKET                 &kp RPAR                  &kp BSPC
+&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &to 1        &kp MINUS  &hmr RIGHT_SHIFT EQUAL  &hmr LEFT_CONTROL LEFT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_PARENTHESIS  &hmr RIGHT_GUI BACKSLASH  &kp GRAVE
+&kp LSHFT  &trans            &trans            &trans                &trans              &to 5        &kp UNDER  &kp PLUS                &kp LBRC                            &kp RBRC                          &kp PIPE                  &kp TILDE
                                                &kp LGUI              &trans              &kp SPACE    &kp RET    &trans                  &kp RALT
             >;
         };
