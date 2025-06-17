@@ -17,10 +17,10 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        combo_caps_word {
             timeout-ms = <50>;
             key-positions = <17 18>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&caps_word>;
         };
 
         combo_right_index_bottom {
@@ -141,9 +141,9 @@
 
             bindings = <
 &kp TAB    &kp Q            &kp W            &kp F                &kp P              &kp G        &kp J      &kp L               &kp U                &kp Y             &kp SEMI          &kp BACKSPACE
-&kp LCTRL  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp D        &kp H      &hmr RIGHT_SHIFT N  &hmr LEFT_CONTROL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
+&kp TAB    &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp D        &kp H      &hmr RIGHT_SHIFT N  &hmr LEFT_CONTROL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O  &kp SQT
 &kp LSHFT  &kp Z            &kp X            &kp C                &kp V              &kp B        &kp K      &kp M               &kp COMMA            &kp DOT           &kp FSLH          &kp RIGHT_SHIFT
-                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &moto 10 10         &mo 7
+                                             &mo 1                &mo 2              &kp SPACE    &kp ENTER  &mo 10              &mo 7
             >;
         };
 
@@ -157,9 +157,9 @@
             //                    | GUI |     | SPC | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL          &kp AT            &kp HASH              &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS                &kp LEFT_BRACKET                    &kp RIGHT_BRACKET                 &kp RPAR                  &kp BSPC
-&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &to 1        &kp MINUS  &hmr RIGHT_SHIFT EQUAL  &hmr LEFT_CONTROL LEFT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_PARENTHESIS  &hmr RIGHT_GUI BACKSLASH  &kp GRAVE
-&kp LSHFT  &kp BSLH          &kp NUBS          &trans                &trans              &to 5        &kp UNDER  &kp PLUS                &kp LBRC                            &kp RBRC                          &kp PIPE                  &kp TILDE
+&kp TAB    &kp EXCL          &kp AT            &kp HASH              &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS                &kp LEFT_BRACKET                    &kp RIGHT_BRACKET                 &kp RPAR             &kp BSPC
+&kp LCTRL  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &to 1        &kp MINUS  &hmr RIGHT_SHIFT EQUAL  &hmr LEFT_CONTROL LEFT_PARENTHESIS  &hmr RIGHT_ALT RIGHT_PARENTHESIS  &hmr RIGHT_GUI NUBS  &kp GRAVE
+&kp LSHFT  &kp BSLH          &kp NUBS          &trans                &trans              &to 5        &kp UNDER  &kp PLUS                &kp LBRC                            &kp RBRC                          &kp PIPE             &kp TILDE
                                                &kp LGUI              &trans              &kp SPACE    &kp RET    &trans                  &kp RALT
             >;
         };
