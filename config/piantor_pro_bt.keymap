@@ -113,6 +113,11 @@
             bindings = <&umlaut O>;
             key-positions = <38 22>;
         };
+
+        combo_left_index_hr {
+            bindings = <&kp EQUAL>;
+            key-positions = <18 19>;
+        };
     };
 };
 
