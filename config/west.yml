@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 43b09e0fae3fee528985b90154ca0f971c0b6bf6 # last commit before ZMK's Zephyr 4.1 / HWMv2 move (#3060), which the local boards/arm/piantor_pro_bt layout predates
       import: app/west.yml
   self:
     path: config
