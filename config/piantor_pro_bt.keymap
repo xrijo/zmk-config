@@ -241,16 +241,19 @@
             display-name = "LEAGUE";
 
             // -----------------------------------------------------------------------------------------
-            // | ESC | TAB | 1   | 2   | 3   | 4   |     |     |     |     |     |      |
-            // | U   | SHFT| Q   | W   | E   | R   |     |     |     |     |     |      |
-            // | P   | T   | A   | S   | D   | F   |     |     |     |     |     |      |
-            //                   | ALT | SPC | CTRL| LYR0|     |     |
+            // | TAB  | Q   | W   | F   | P   | G   | J   | L   | U   | Y   | ;   | BSPC |
+            // | SPC  | A   | R   | S   | T   | D   | H   | N   | E   | I   | O   | ESC  |
+            // | SHFT | Z   | X   | C   | V   | B   | K   | M   | ,   | .   | /   | SHFT |
+            //                    | ALT | SHFT| CTRL| ENT | LYR8| LYR0|
+            // colemak base, homerow mods stripped (the only deliberate difference from colemak);
+            // SPACE relocated to the A-column, SHIFT relocated to the left-middle thumb;
+            // right hand kept at colemak defaults — it's the mouse hand while gaming.
 
             bindings = <
-&kp ESC  &kp TAB              &kp N1           &kp N2               &kp N3             &kp N4       &trans  &trans               &trans                &trans             &trans             &trans
-&kp U    &hml LEFT_GUI LSHFT  &hml LEFT_ALT Q  &hml LEFT_CONTROL W  &hml LEFT_SHIFT E  &kp R        &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
-&kp P    &kp T                &kp A            &kp S                &kp D              &kp F        &trans  &trans               &trans                &trans             &trans             &trans
-                                               &kp LALT             &kp SPACE          &kp LCTRL    &to 0   &trans               &trans
+&kp TAB    &kp Q      &kp W      &kp F      &kp P      &kp G        &kp J      &kp L      &kp U      &kp Y      &kp SEMI   &kp BACKSPACE
+&kp SPACE  &kp A      &kp R      &kp S      &kp T      &kp D        &kp H      &kp N      &kp E      &kp I      &kp O      &kp ESC
+&kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B        &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RIGHT_SHIFT
+                                  &kp LALT   &kp LSHFT  &kp LCTRL    &kp ENTER  &mo 8      &to 0
             >;
         };
 
@@ -305,20 +308,23 @@
             >;
         };
 
-        layer_8 {
-            display-name = "LAYER_8";
+        rare_binds {
+            display-name = "RARE-BINDS";
 
             // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |     |     |     |     |     |      |
+            // |     |     |     |     |     |     |     |  7  |  8  |  9  |     | BSPC |
+            // |     |     |     |     |     |     |     |  4  |  5  |  6  |     |  0   |
+            // |     |     |     |     |     |     |     |  1  |  2  |  3  |     | SHFT |
             //                    |     |     |     |     |     |     |
+            // held from gaming's right-middle thumb (&mo 8); left hand &trans so
+            // abilities stay live underneath. BSPC/0/SHIFT column kept &trans/N0 to
+            // match gaming's own right-edge keys at rest.
 
             bindings = <
-&trans  &trans            &trans            &trans                &trans              &trans    &trans  &trans               &trans                &trans             &trans             &trans
-&trans  &hml LEFT_GUI N0  &hml LEFT_ALT N0  &hml LEFT_CONTROL N0  &hml LEFT_SHIFT N0  &trans    &trans  &hmr RIGHT_SHIFT N0  &hmr LEFT_CONTROL N0  &hmr RIGHT_ALT N0  &hmr RIGHT_GUI N0  &trans
-&trans  &trans            &trans            &trans                &trans              &trans    &trans  &trans               &trans                &trans             &trans             &trans
-                                            &trans                &trans              &trans    &trans  &trans               &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp N4  &kp N5  &kp N6  &trans  &kp N0
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
+                        &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
 
